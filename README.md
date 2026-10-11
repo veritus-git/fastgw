@@ -8,7 +8,7 @@ Ten skrypt automatycznie pobiera i konfiguruje kompilator C++ (MinGW/g++).
 2. Skopiuj poniższy kod w całości, wklej do okna terminala i wciśnij **Enter**:
 
 ```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression; scoop install gcc
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; if (!(Get-Command scoop -ErrorAction SilentlyContinue)) { Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression }; scoop install gcc
 ```
 
 3. Poczekaj, aż na ekranie przestaną pojawiać się nowe napisy (może to zająć chwilę).
